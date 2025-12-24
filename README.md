@@ -82,12 +82,12 @@ A full-stack AI chatbot application built using the **MERN stack** and **Google 
 Create a `.env` file in the **backend** directory and add:
 
 ```env
-PORT=5000
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret
-GEMINI_API_KEY=your_gemini_api_key
-EMAIL_USER=your_email
-EMAIL_PASS=your_email_password
+PORT
+Db_url
+Password
+Gmail
+Activation_sec
+Jwt_sec
 ```
 
 ---
@@ -133,17 +133,18 @@ Frontend will run on `http://localhost:3000`
 Chatbot-Project/
 │
 ├── backend/
+│   ├── controllers/
+│   ├── database/
+│   ├── middlewares/
 │   ├── models/
 │   ├── routes/
-│   ├── controllers/
-│   ├── config/
-│   └── server.js
+
+│   ├── index.js
 │
 ├── frontend/
 │   ├── src/
-│   ├── components/
-│   ├── pages/
-│   └── App.js
+
+│   └── index.html
 │
 └── README.md
 ```
@@ -152,7 +153,7 @@ Chatbot-Project/
 
 ## 🔐 Authentication Flow
 
-* User registers/logs in
+* User registers/logs in by entering email
 * JWT token is generated on successful authentication
 * Token is stored and sent with API requests
 * Protected routes validate the token
@@ -173,8 +174,6 @@ Chatbot-Project/
 
 * Chat history persistence
 * Role-based authentication
-* Voice input support
-* Dark mode
 * Rate limiting & analytics
 * Multi-language support
 
